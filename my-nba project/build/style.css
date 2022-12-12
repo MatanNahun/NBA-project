@@ -1,0 +1,122 @@
+body {
+  background-color: #a8a7a7;
+}
+
+.page-title {
+  font-family: "Allerta Stencil";
+  font-size: 50px;
+  margin: 2%;
+  text-align: center;
+}
+
+.players-results {
+  margin-left: 7%;
+}
+
+.page-default-pic {
+  background-color: #a8a7a7;
+  border: none;
+  margin-top: 5%;
+  margin-left: 20%;
+}
+
+.player-card {
+  display: inline-block;
+  background-color: #ff8928;
+  margin: 0.5%;
+}
+
+.player-card:hover {
+  background-color: #ee6e05;
+}
+
+.page-default-text {
+  font-family: "Allerta Stencil";
+  font-size: 22px;
+  margin: 5%;
+  text-align: center;
+}
+
+.player-detail {
+  text-align: center;
+  font-family: "Allerta Stencil";
+  font-size: 22px;
+}
+
+.statistics-container {
+  text-align: center;
+  font-family: "Allerta Stencil";
+  font-size: 14px;
+  margin: 2%;
+}
+
+img {
+  background-color: #0049b7;
+  border: 8px solid #ff8928;
+}
+
+/* img.dreamTeam-player-detail {
+  background-color: #a212f0;
+  border: 8px solid #f5a96b;
+} */
+
+.serach-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  size: 10cm;
+}
+
+#team {
+  background-color: DodgerBlue;
+  width: 100px;
+  height: 30px;
+}
+
+#year {
+  background-color: DodgerBlue;
+  width: 100px;
+  height: 30px;
+}
+
+#result-players-btn {
+  background-color: #ff8928;
+  margin: 3%;
+  width: 100px;
+  height: 35px;
+}
+
+#result-players-btn:hover {
+  color: white;
+}
+
+#results-dreamTeam-btn {
+  background-color: #a44cfb;
+  width: 100px;
+  height: 35px;
+}
+
+#results-dreamTeam-btn:hover {
+  color: white;
+}
+
+.add-to-dreamTeam-btn {
+  background-color: #a44cfb;
+}
+
+.add-to-dreamTeam-btn:focus {
+  background-color: #561498;
+}
+
+.add-to-dreamTeam-btn:hover {
+  color: white;
+}
+
+.delete-from-dreamTeam-btn {
+  background-color: rgb(205, 7, 7);
+}
+
+.delete-from-dreamTeam-btn:hover {
+  color: white;
+}

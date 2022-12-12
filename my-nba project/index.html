@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/build/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+
+    <title>my-NBA</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="page-title"> Your NBA Team
+      </div>
+      <div class="serach-bar-container">
+        <select id="team" name="team">
+          <option value="lakers">lakers</option>
+          <option value="heat" selected>heat</option>
+          <option value="warriors">warriors</option>
+          <option value="suns">suns</option>
+        </select>
+
+        <select id="year" name="team">
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020" selected>2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2017">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+        </select>
+
+        <input id="checkbox" type="checkbox">
+
+        <button id="result-players-btn" type="get-team-btn">Get Team!</button>
+        <button id="results-dreamTeam-btn">Retreive</button>
+      </div>
+      <div id="results-container" class="players-results">
+        <div class="page-default-text" >watinig for your team...</div>
+        <img class="page-default-pic" src="https://1000logos.net/wp-content/uploads/2017/04/Logo-NBA.png" width="705" height="500">
+      </div>
+
+    <!-- script for players cards -->
+    <script id="results-template" type="text/x-handlebars-template">
+      {{#each players}}
+        <div class="player-card">
+          <div class="player-detail">{{firstName}}</div>
+          <div class="player-detail">{{lastName}}</div>
+          <div class="player-detail">{{jerseyNumber}}</div>
+          <img class="player-detail" id="profile-pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onerror="this.src='https://cdn.vectorstock.com/i/preview-1x/75/58/default-placeholder-fitness-trainer-in-a-t-shirt-vector-20847558.webp'"  width="250" height="200" alt="player image" />
+          <div class="player-detail">{{position}}</div>
+          <div class="statistics-container"></div>
+          <button class="add-to-dreamTeam-btn" type="add-to-dreamTeam-btn">add to dream team</button>
+        </div>
+      {{/each}}
+    </script>
+
+    <!-- script for dreamTeam players cards -->
+    <script id="results-dreamTeam-template" type="text/x-handlebars-template">
+      {{#each dreamTeam}}
+        <div class="player-card">
+          <div class="player-detail" >{{firstName}}</div>
+          <div class="player-detail">{{lastName}}</div>
+          <div class="player-detail">{{jerseyNumber}}</div>
+          <img class="player-detail" id="profile-pic" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onerror="this.src='https://cdn.vectorstock.com/i/preview-1x/75/58/default-placeholder-fitness-trainer-in-a-t-shirt-vector-20847558.webp'"  width="250" height="200" alt="player image" />
+          <div class="player-detail" >{{position}}</div>
+          <div class="statistics-container"></div>
+          <button class="delete-from-dreamTeam-btn" type="delete-from-dreamTeam-btn">delete from dream team</button>
+        </div>
+      {{/each}}
+    </script>
+
+    <!-- script for statictics players cards -->
+    <script id="statistics-template" type="text/x-handlebars-template">
+        <div class="statistics-player-card">
+          <div class="player-statistic">games played: {{games_played}}</div>
+          <div class="player-statistic">assist per game: {{assists_per_game}}</div>
+          <div class="player-statistic">minutes per game: {{minutes_per_game}}</div>
+          <div class="player-statistic">points per game: {{points_per_game}}</div>
+          <div class="player-statistic">rebounds per game: {{rebounds_per_game}}</div>
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/build/Player.js"></script>
+    <script src="/build/Players.js"></script>
+    <script src="/build/Model.js"></script>
+    <script src="/build/Render.js"></script>
+    <script src="/build/Controller.js"></script>
+  </body>
+</html>
